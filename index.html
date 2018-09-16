@@ -10,6 +10,7 @@
         // format a number to xxx.oo, input a number string
         function numberFormat(a){
             a = "" + a;
+            console.log(a.split("."));
             if(a.split(".").length == 2) {
                 return a.split(".")[0] + "." + a.split(".")[1].slice(0,2);
             }else {
@@ -51,9 +52,9 @@
             var dataSet = [];
 
             dataSet.push(
-               ["Drug A", wt*lowerLimitDrugA + "~" + wt*upperLimitDrugA, numberFormat(wt*lowerLimitDrugA/50) + "~" + numberFormat(wt*upperLimitDrugA/50), numberFormat(wt*lowerLimitDrugA/50*cnt) + "~" + numberFormat(wt*upperLimitDrugA/50*cnt)],
-               ["Drug B", wt*lowerLimitDrugB + "~" + wt*upperLimitDrugB, numberFormat(wt*lowerLimitDrugB/40) + "~" + numberFormat(wt*upperLimitDrugB/40), numberFormat(wt*lowerLimitDrugB/40*cnt) + "~" + numberFormat(wt*upperLimitDrugB/40*cnt)],
-               ["Drug C", wt*lowerLimitDrugC + "~" + wt*upperLimitDrugC, numberFormat(wt*lowerLimitDrugC/30) + "~" + numberFormat(wt*upperLimitDrugC/30), numberFormat(wt*lowerLimitDrugC/30*cnt) + "~" + numberFormat(wt*upperLimitDrugC/30*cnt)]
+               ["Drug A", numberFormat(wt*lowerLimitDrugA) + "~" + numberFormat(wt*upperLimitDrugA), numberFormat(wt*lowerLimitDrugA/50) + "~" + numberFormat(wt*upperLimitDrugA/50), numberFormat(wt*lowerLimitDrugA/50*cnt) + "~" + numberFormat(wt*upperLimitDrugA/50*cnt)],
+               ["Drug B", numberFormat(wt*lowerLimitDrugB) + "~" + numberFormat(wt*upperLimitDrugB), numberFormat(wt*lowerLimitDrugB/40) + "~" + numberFormat(wt*upperLimitDrugB/40), numberFormat(wt*lowerLimitDrugB/40*cnt) + "~" + numberFormat(wt*upperLimitDrugB/40*cnt)],
+               ["Drug C", numberFormat(wt*lowerLimitDrugC) + "~" + numberFormat(wt*upperLimitDrugC), numberFormat(wt*lowerLimitDrugC/30) + "~" + numberFormat(wt*upperLimitDrugC/30), numberFormat(wt*lowerLimitDrugC/30*cnt) + "~" + numberFormat(wt*upperLimitDrugC/30*cnt)]
             );
 
             $('#table').DataTable( {
@@ -81,7 +82,7 @@
             <option value="reptile">龜</option>
         </select>
         <br>
-        Weight: <input id="wt" type="number" pattern="\d+(\.\d*)?" onchange="test();"></input> 公斤
+        Weight: <input id="wt" type="text" pattern="[0-9]*" decimal="true" onchange="test();"></input> 公斤
         <br>
         份數: <input id="cnt" type="number" pattern="\d*" onchange="test();"></input> 份
         <br>
