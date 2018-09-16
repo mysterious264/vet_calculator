@@ -9,8 +9,8 @@
             var wt = parseFloat($("#wt").val());
             var cnt = parseInt($("#cnt").val());
             document.getElementById("result").innerHTML = wt*15;
-            dataset = [];
-            dataset.push(
+            var dataSet = [];
+            dataSet.push(
                ["testDrug", wt*5 + "~" + wt*20, wt*5/50 + "~" + wt*20/50, wt*5/50*cnt + "~" + wt*20/50*cnt]
             );
 
