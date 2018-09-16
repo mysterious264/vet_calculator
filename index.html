@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script>
+        // format a number to xxx.oo, input a number string
         function numberFormat(a){
             a = "" + a;
             if(a.split(".").length == 2) {
@@ -80,9 +81,9 @@
             <option value="reptile">龜</option>
         </select>
         <br>
-        Weight: <input id="wt" onchange="test();"></input> 公斤
+        Weight: <input id="wt" type="number" pattern="\d+(\.\d*)?" onchange="test();"></input> 公斤
         <br>
-        份數: <input id="cnt" onchange="test();"></input> 份
+        份數: <input id="cnt" type="number" pattern="\d*" onchange="test();"></input> 份
         <br>
         <div width="95%">
             <table id="table" class="display" width="100%"></table>
