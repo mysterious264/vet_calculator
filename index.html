@@ -16,15 +16,15 @@
             }else if($("#species")[0].value == "hamster"){
                 lowerLimit = 10;
                 upperLimit = 20;
+            }else if($("#species")[0].value == "reptile"){
+                lowerLimit = 3;
+                upperLimit = 6;
             }
-
-
-            document.getElementById("result").innerHTML = wt*15;
             var dataSet = [];
             dataSet.push(
                ["Drug A", wt*lowerLimit + "~" + wt*upperLimit, wt*lowerLimit/50 + "~" + wt*upperLimit/50, wt*lowerLimit/50*cnt + "~" + wt*upperLimit/50*cnt],
-               ["Drug B", wt*5 + "~" + wt*20, wt*5/50 + "~" + wt*20/50, wt*5/50*cnt + "~" + wt*20/50*cnt],
-               ["Drug C", wt*5 + "~" + wt*20, wt*5/50 + "~" + wt*20/50, wt*5/50*cnt + "~" + wt*20/50*cnt]
+               ["Drug B", wt*lowerLimit + "~" + wt*upperLimit, wt*lowerLimit/40 + "~" + wt*upperLimit/40, wt*lowerLimit/40*cnt + "~" + wt*upperLimit/40*cnt],
+               ["Drug C", wt*lowerLimit + "~" + wt*upperLimit, wt*lowerLimit/30 + "~" + wt*upperLimit/30, wt*lowerLimit/30*cnt + "~" + wt*upperLimit/40*cnt]
             );
 
             $('#table').DataTable( {
@@ -47,13 +47,12 @@
         <option value ="rabbit">兔子</option>
         <option value ="hamster">倉鼠</option>
         <option value="reptile">龜</option>
-        <option value="he">刺蝟</option>
     </select>
     <br>
     Weight: <input id="wt" onchange="test();"></input> 公斤
     <br>
     份數: <input id="cnt" onchange="test();"></input> 份
-    <div id="result"></div>
+    <br>
     <table id="table" class="display" width="100%"></table>
 </body>
 </html>
