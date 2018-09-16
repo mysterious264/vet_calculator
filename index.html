@@ -6,21 +6,38 @@
     <script>
         function test(){
             console.log("test");
-            var wt = parseFloat(document.getElementById("wt").value);
+            var wt = parseFloat($("#wt").val());
+            var cnt = parseInt($("#cnt").val());
             document.getElementById("result").innerHTML = wt*15;
+            dataset = [];
+            dataset.append(
+               ["testDrug", wt*5 + "~" + wt*20, wt*5/50 + "~" + wt*20/50, wt*5/50*cnt + "~" + wt*20/50*cnt]
+            );
+
+            $('#result').DataTable( {
+                data: dataSet,
+                columns: [
+                    { title: "Drug" },
+                    { title: "Dosage" },
+                    { title: "perDrug" },
+                    { title: "tab" }
+                ]
+            } );
+            var data = []
         }
     </script>
 </head>
 <body>
     <h1>fuck vet</h1>
-    <select>
-        <option value ="兔子">兔子</option>
-        <option value ="倉鼠">倉鼠</option>
-        <option value="龜">龜</option>
-        <option value="刺蝟">刺蝟</option>
+    <select onchange="test();">
+        <option value ="rabbit">兔子</option>
+        <option value ="hamster">倉鼠</option>
+        <option value="reptile">龜</option>
+        <option value="he">刺蝟</option>
     </select>
     <br>
     Weight: <input id="wt" onchange="test();"></input> 公斤
+    份數: <input id="cnt" onchange="test();"></input> 份
     <div id="result"></div>
 </body>
 </html>
