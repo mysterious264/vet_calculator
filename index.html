@@ -4,16 +4,16 @@
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
     <script>
-        var lowerLimit = 0;
-        var upperLimit = 1;
+        var lowerLimit = 5;
+        var upperLimit = 20;
         function test(){
             console.log("test");
             var wt = parseFloat($("#wt").val());
             var cnt = parseInt($("#cnt").val());
-            if($("#species").value == "rabbit"){
+            if($("#species")[0].value == "rabbit"){
                 lowerLimit = 5;
                 upperLimit = 20;
-            }else if($("#species").value == "hamster"){
+            }else if($("#species")[0].value == "hamster"){
                 lowerLimit = 10;
                 upperLimit = 20;
             }
