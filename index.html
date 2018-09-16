@@ -75,9 +75,8 @@
         }
 
         $(document).ready(function(){
+            //replace anything that is not a number to a decimal point
             $("#wt").on("keydown", function (e) {
-
-                // replace decimal point
                 if (isNaN(e.key) && e.key != "Backspace") {
                     console.log(e.key);
                     e.preventDefault();
