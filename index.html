@@ -43,6 +43,7 @@
             $('#table').DataTable( {
                 "destroy": true,
                 "pageLength": 100,
+                "autoWidth":false,
                 data: dataSet,
                 columns: [
                     { title: "Drug" },
@@ -51,7 +52,7 @@
                     { title: "tab" }
                 ]
             } );
-            var data = []
+            $("#table").css("width","90%");
         }
     </script>
 </head>
@@ -68,7 +69,9 @@
         <br>
         份數: <input id="cnt" onchange="test();"></input> 份
         <br>
-        <table id="table" class="display" width="95%"></table>
+        <div width="95%">
+            <table id="table" class="display" width="100%"></table>
+        </div>
     </div>
 </body>
 </html>
