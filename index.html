@@ -11,7 +11,6 @@
         // format a number to xxx.oo, input a number string
         function numberFormat(a){
             a = "" + a;
-            console.log(a.split("."));
             if(a.split(".").length == 2) {
                 return a.split(".")[0] + "." + a.split(".")[1].slice(0,2);
             }else {
@@ -19,14 +18,7 @@
             }
         }
 
-        $("#wt").on("keydown", function (e) {
-            console.log(e.keyCode);
-        // replace decimal point
-            if (e.keyCode === 188) {
-                e.preventDefault();
-                $(this).val($(this).val() + ".");
-            }
-        });
+
 
         var lowerLimitDrugA = 0;
         var upperLimitDrugA = 0;
@@ -35,7 +27,6 @@
         var lowerLimitDrugC = 0;
         var upperLimitDrugC = 0;
         function test(){
-            console.log("test");
             var wt = parseFloat($("#wt").val());
             var cnt = parseInt($("#cnt").val());
             if($("#species")[0].value == "rabbit"){
@@ -82,6 +73,18 @@
             } );
             $("#table").css("width","90%");
         }
+
+        $(document).ready(function(){
+            $("#wt").on("keydown", function (e) {
+                console.log(e.keyCode);
+                // replace decimal point
+                if (e.keyCode === 188) {
+                    e.preventDefault();
+                    $(this).val($(this).val() + ".");
+                }
+            });
+        });
+
     </script>
 </head>
 <body>
