@@ -20,12 +20,13 @@
         }
 
         $("#wt").on("keydown", function (e) {
+            console.log(e.keyCode);
         // replace decimal point
             if (e.keyCode === 188) {
                 e.preventDefault();
                 $(this).val($(this).val() + ".");
             }
-        }
+        });
 
         var lowerLimitDrugA = 0;
         var upperLimitDrugA = 0;
