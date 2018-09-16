@@ -76,9 +76,9 @@
 
         $(document).ready(function(){
             $("#wt").on("keydown", function (e) {
-                console.log(e.keyCode);
+                console.log(e.which);
                 // replace decimal point
-                if (e.keyCode === 188) {
+                if (e.keyCode == 188 || e.keyCode == 59 || e.keyCode == 42|| e.keyCode == 43 || e.keyCode == 35) {
                     e.preventDefault();
                     $(this).val($(this).val() + ".");
                 }
@@ -96,7 +96,7 @@
             <option value="reptile">龜</option>
         </select>
         <br>
-        Weight: <input id="wt" type="tel" onchange="test();"></input> 公斤
+        Weight: <input id="wt" type='number' placeholder='float' step='2' onchange="test();"></input> 公斤
         <br>
         份數: <input id="cnt" type="number" pattern="\d*" onchange="test();"></input> 份
         <br>
