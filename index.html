@@ -14,7 +14,7 @@
                ["testDrug", wt*5 + "~" + wt*20, wt*5/50 + "~" + wt*20/50, wt*5/50*cnt + "~" + wt*20/50*cnt]
             );
 
-            $('#result').DataTable( {
+            $('#table').DataTable( {
                 data: dataSet,
                 columns: [
                     { title: "Drug" },
@@ -40,6 +40,6 @@
     <br>
     份數: <input id="cnt" onchange="test();"></input> 份
     <div id="result"></div>
-    <table id="example" class="display" width="100%"></table>
+    <table id="table" class="display" width="100%"></table>
 </body>
 </html>
