@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
     <script>
         function numberFormat(a){
+            a = "" + a;
             return a.split(".")[0] + "." + a.split(".")[1].slice(0,2);
         }
 
