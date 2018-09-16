@@ -6,7 +6,11 @@
     <script>
         function numberFormat(a){
             a = "" + a;
-            return a.split(".")[0] + "." + a.split(".")[1].slice(0,2);
+            if(a.split(".").length == 2) {
+                return a.split(".")[0] + "." + a.split(".")[1].slice(0,2);
+            }else {
+                return a;
+            }
         }
 
         var lowerLimit = 5;
@@ -30,7 +34,7 @@
             dataSet.push(
                ["Drug A", wt*lowerLimit + "~" + wt*upperLimit, numberFormat(wt*lowerLimit/50) + "~" + numberFormat(wt*upperLimit/50), numberFormat(wt*lowerLimit/50*cnt) + "~" + numberFormat(wt*upperLimit/50*cnt)],
                ["Drug B", wt*lowerLimit + "~" + wt*upperLimit, numberFormat(wt*lowerLimit/40) + "~" + numberFormat(wt*upperLimit/40), numberFormat(wt*lowerLimit/40*cnt) + "~" + numberFormat(wt*upperLimit/40*cnt)],
-               ["Drug C", wt*lowerLimit + "~" + wt*upperLimit, numberFormat(wt*lowerLimit/30) + "~" + numberFormat(wt*upperLimit/30), numberFormat(wt*lowerLimit/30*cnt) + "~" + numberFormat(wt*upperLimit/40*cnt)]
+               ["Drug C", wt*lowerLimit + "~" + wt*upperLimit, numberFormat(wt*lowerLimit/30) + "~" + numberFormat(wt*upperLimit/30), numberFormat(wt*lowerLimit/30*cnt) + "~" + numberFormat(wt*upperLimit/30*cnt)]
             );
 
             $('#table').DataTable( {
