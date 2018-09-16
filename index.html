@@ -18,6 +18,15 @@
                 return a;
             }
         }
+
+        $("#wt").on("keydown", function (e) {
+        // replace decimal point
+            if (e.keyCode === 188) {
+                e.preventDefault();
+                $(this).val($(this).val() + ".");
+            }
+        }
+
         var lowerLimitDrugA = 0;
         var upperLimitDrugA = 0;
         var lowerLimitDrugB = 0;
