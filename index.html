@@ -4,6 +4,10 @@
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
     <script>
+        function numberFormat(a){
+            return a.split(".")[0] + "." + a.split(".")[1].slice(0,2);
+        }
+
         var lowerLimit = 5;
         var upperLimit = 20;
         function test(){
@@ -21,14 +25,16 @@
                 upperLimit = 6;
             }
             var dataSet = [];
+
             dataSet.push(
-               ["Drug A", wt*lowerLimit + "~" + wt*upperLimit, wt*lowerLimit/50 + "~" + wt*upperLimit/50, wt*lowerLimit/50*cnt + "~" + wt*upperLimit/50*cnt],
+               ["Drug A", wt*lowerLimit + "~" + wt*upperLimit, numberFormat(wt*lowerLimit/50) + "~" + numberFormat(wt*upperLimit/50), numberFormat(wt*lowerLimit/50*cnt) + "~" + numberFormat(wt*upperLimit/50*cnt]),
                ["Drug B", wt*lowerLimit + "~" + wt*upperLimit, wt*lowerLimit/40 + "~" + wt*upperLimit/40, wt*lowerLimit/40*cnt + "~" + wt*upperLimit/40*cnt],
                ["Drug C", wt*lowerLimit + "~" + wt*upperLimit, wt*lowerLimit/30 + "~" + wt*upperLimit/30, wt*lowerLimit/30*cnt + "~" + wt*upperLimit/40*cnt]
             );
 
             $('#table').DataTable( {
                 "destroy": true,
+                "pageLength": 100,
                 data: dataSet,
                 columns: [
                     { title: "Drug" },
@@ -42,7 +48,7 @@
     </script>
 </head>
 <body>
-    <h1>fuck vet</h1>
+    <h1>Vet Calculator</h1>
     <select id="species" onchange="test();">
         <option value ="rabbit">兔子</option>
         <option value ="hamster">倉鼠</option>
