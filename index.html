@@ -38,7 +38,7 @@
               var upperLimitDrugB = 25;
               var lowerLimitDrugC = 5;
               var upperLimitDrugC = 30;
-            }else if($("#species")[0].value == "hamster"){
+            }else if($("#species")[0].value == "rodent"){
               var lowerLimitDrugA = 4;
               var upperLimitDrugA = 8;
               var lowerLimitDrugB = 3;
@@ -93,9 +93,10 @@
     <h1 class="text-center">Vet Calculator</h1>
     <div class="text-center">
         <select id="species" onchange="test();">
-            <option value ="rabbit">兔子</option>
-            <option value ="hamster">倉鼠</option>
-            <option value="reptile">龜</option>
+            <option value ="rabbit">Rabbit</option>
+            <option value ="rodent">Rodent</option>
+            <option value="reptile">reptile</option>
+            <option value ="hedgehog">hedgehog</option>
         </select>
         <br>
         Weight: <input id="wt" type='tel' onchange="test();"></input> 公斤
