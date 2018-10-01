@@ -56,9 +56,9 @@
             var dataSet = [];
 
             dataSet.push(
-               ["Baytril", numberFormat(wt*lowerLimitDrugA) + "~" + numberFormat(wt*upperLimitDrugA), numberFormat(wt*lowerLimitDrugA/50) + "~" + numberFormat(wt*upperLimitDrugA/50), numberFormat(wt*lowerLimitDrugA/50*cnt) + "~" + numberFormat(wt*upperLimitDrugA/50*cnt)],
-               ["Metronidazole", numberFormat(wt*lowerLimitDrugB) + "~" + numberFormat(wt*upperLimitDrugB), numberFormat(wt*lowerLimitDrugB/250) + "~" + numberFormat(wt*upperLimitDrugB/250), numberFormat(wt*lowerLimitDrugB/250*cnt) + "~" + numberFormat(wt*upperLimitDrugB/250*cnt)],
-               ["Meloxicam", numberFormat(wt*lowerLimitDrugC) + "~" + numberFormat(wt*upperLimitDrugC), numberFormat(wt*lowerLimitDrugC/7.5) + "~" + numberFormat(wt*upperLimitDrugC/7.5), numberFormat(wt*lowerLimitDrugC/7.5*cnt) + "~" + numberFormat(wt*upperLimitDrugC/7.5*cnt)]
+               ["Baytril", numberFormat(lowerLimitDrugA) + "~" + numberFormat(upperLimitDrugA), numberFormat(wt*lowerLimitDrugA/50) + "~" + numberFormat(wt*upperLimitDrugA/50), numberFormat(wt*lowerLimitDrugA/50*cnt) + "~" + numberFormat(wt*upperLimitDrugA/50*cnt)],
+               ["Metronidazole", numberFormat(lowerLimitDrugB) + "~" + numberFormat(upperLimitDrugB), numberFormat(wt*lowerLimitDrugB/250) + "~" + numberFormat(wt*upperLimitDrugB/250), numberFormat(wt*lowerLimitDrugB/250*cnt) + "~" + numberFormat(wt*upperLimitDrugB/250*cnt)],
+               ["Meloxicam", numberFormat(lowerLimitDrugC) + "~" + numberFormat(upperLimitDrugC), numberFormat(wt*lowerLimitDrugC/7.5) + "~" + numberFormat(wt*upperLimitDrugC/7.5), numberFormat(wt*lowerLimitDrugC/7.5*cnt) + "~" + numberFormat(wt*upperLimitDrugC/7.5*cnt)]
             );
 
             $('#table').DataTable( {
